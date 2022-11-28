@@ -1,2 +1,3 @@
 #!bin/bash
-echo $PYCODE | python3 
+ echo $PYCODE | python3 
+
