@@ -1,9 +1,12 @@
 #!/usr/bin/python3
+import random
 number = random.randint(-10000, 10000)
-x = number % 10
-if x > 5:
-    print(F"Last digit of {number} is {x} and is greater than 5\n")
-elif x == 0:
-    print(F"Last digit of {number} is {x} and is 0\n")
-elif x < 5:
-    print(F"Last digit of {number} is {x} and is less than 6 and not 0\n")
+last_digit = number % 10 if number > 0 else -1 * (abs(number) % 10)
+print("Last digit of", number, "is", last_digit, "and is ", end="")
+
+if last_digit > 5:
+    print("greater than 5")
+elif last_digit == 0:
+    print("0")
+else:
+    print("less than 6 and not 0")
