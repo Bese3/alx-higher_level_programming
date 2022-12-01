@@ -8,4 +8,4 @@ elif len(argv) - 1 == 1:
 else:
     print(F"{len(argv) } arguments:")
     for i in range(len(argv) ):
-        print(F"{i}: {argv[i]}")
+        print(F"{i+1}: {argv[i+1]}")
