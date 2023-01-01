@@ -1,0 +1,69 @@
+"""
+The ``5-text_indentation`` module
+=================================
+
+Using ``text_indentation``
+--------------------------
+
+
+>>> __import__('sys').path.insert(1, '../')
+
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+>>> text_indentation("A.B?C:")
+A.
+<BLANKLINE>
+B?
+<BLANKLINE>
+C:
+<BLANKLINE>
+
+>>> text_indentation("A.     B?    C")
+A.
+<BLANKLINE>
+B?
+<BLANKLINE>
+C
+
+>>> text_indentation("A   .     B                 ?    C")
+A.
+<BLANKLINE>
+B?
+<BLANKLINE>
+C
+
+>>> text_indentation("          A   .     B                 ?    C")
+A.
+<BLANKLINE>
+B?
+<BLANKLINE>
+C
+
+>>> text_indentation(12)
+Traceback (most recent call last):
+TypeError: text must be a string
+
+>>> text_indentation("The. Quick  . Brown. Fox . Jumps . Over   . The . Lazy \
+...                                             . ?     \
+...     Dog")
+The.
+<BLANKLINE>
+Quick.
+<BLANKLINE>
+Brown.
+<BLANKLINE>
+Fox.
+<BLANKLINE>
+Jumps.
+<BLANKLINE>
+Over.
+<BLANKLINE>
+The.
+<BLANKLINE>
+Lazy.
+<BLANKLINE>
+?
+<BLANKLINE>
+Dog
+
+"""

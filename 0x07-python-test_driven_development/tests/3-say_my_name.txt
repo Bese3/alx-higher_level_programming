@@ -1,0 +1,44 @@
+"""
+The ``3-say_my_name`` module
+===============================
+
+Using ``say_my_name``
+------------------------
+
+>>> __import__('sys').path.insert(1, '../')
+
+>>> say_my_name = __import__('3-say_my_name').say_my_name
+
+>>> say_my_name("John", "Doe")
+My name is John Doe
+
+>>> say_my_name(1)
+Traceback (most recent call last):
+TypeError: first_name must be a string
+
+>>> say_my_name("Bob", 2)
+Traceback (most recent call last):
+TypeError: last_name must be a string
+
+>>> say_my_name("Bob", None)
+Traceback (most recent call last):
+TypeError: last_name must be a string
+
+>>> say_my_name(None, None)
+Traceback (most recent call last):
+TypeError: first_name must be a string
+
+>>> say_my_name(None)
+Traceback (most recent call last):
+TypeError: first_name must be a string
+
+
+>>> say_my_name(None, "Dylan")
+Traceback (most recent call last):
+TypeError: first_name must be a string
+
+>>> say_my_name(2, "Dylan")
+Traceback (most recent call last):
+TypeError: first_name must be a string
+
+"""
