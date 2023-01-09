@@ -1,0 +1,52 @@
+"""
+The ``1-my_list`` module
+========================
+
+Using ``MyList``
+----------------------
+
+>>> __import__('sys').path.insert(1, '../')
+
+>>> MyList = __import__('1-my_list').MyList
+
+>>> l = MyList()
+>>> l.append(3)
+>>> l.append(-2)
+>>> l.append(8)
+>>> l.append(1)
+>>> l.append(124)
+>>> l.append(7)
+>>> l.append(4)
+>>> l.print_sorted()
+[-2, 1, 3, 4, 7, 8, 124]
+
+>>> l = MyList()
+>>> l.append(-1)
+>>> l.append(-2)
+>>> l.append(-3)
+>>> l.append(-4)
+>>> l.append(-5)
+>>> l.append(-6)
+>>> l.print_sorted()
+[-6, -5, -4, -3, -2, -1]
+
+>>> l = MyList()
+>>> l.append(5)
+>>> l.append(1)
+>>> l.append(2)
+>>> l.append(3)
+>>> l.append(4)
+>>> l.print_sorted()
+[1, 2, 3, 4, 5]
+
+
+>>> l = MyList()
+>>> l.append(2)
+>>> l.append(3)
+>>> l.append(4)
+>>> l.append(1)
+>>> l.append(5)
+>>> l.print_sorted()
+[1, 2, 3, 4, 5]
+
+"""

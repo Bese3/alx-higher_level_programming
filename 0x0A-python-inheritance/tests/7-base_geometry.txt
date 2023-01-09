@@ -1,0 +1,68 @@
+"""
+The ``7-base_geometry`` module
+==============================
+
+Using ``BaseGeometry``
+----------------------
+
+>>> __import__('sys').path.insert(1, '../')
+
+>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
+>>> bg = BaseGeometry()
+>>> bg.integer_validator("x", 2)
+
+
+>>> bg.integer_validator("x", 2.3)
+Traceback (most recent call last):
+TypeError: x must be an integer
+
+>>> bg.integer_validator("x", "y")
+Traceback (most recent call last):
+TypeError: x must be an integer
+
+>>> bg.integer_validator("x", [1, 2, 3])
+Traceback (most recent call last):
+TypeError: x must be an integer
+
+>>> bg.integer_validator("x", (1, 2, 3))
+Traceback (most recent call last):
+TypeError: x must be an integer
+
+>>> bg.integer_validator("x", 11111.7)
+Traceback (most recent call last):
+TypeError: x must be an integer
+
+>>> bg.integer_validator("x", None)
+Traceback (most recent call last):
+TypeError: x must be an integer
+
+>>> bg.integer_validator("x", True)
+Traceback (most recent call last):
+TypeError: x must be an integer
+
+>>> bg.integer_validator("x", {1, 2, 3})
+Traceback (most recent call last):
+TypeError: x must be an integer
+
+>>> bg.integer_validator("x")
+Traceback (most recent call last):
+TypeError: x must be an integer
+
+>>> bg.integer_validator("x", -5)
+Traceback (most recent call last):
+ValueError: x must be greater than 0
+
+>>> bg.integer_validator("x", 0)
+Traceback (most recent call last):
+ValueError: x must be greater than 0
+
+>>> bg.integer_validator("x", -1000000000)
+Traceback (most recent call last):
+ValueError: x must be greater than 0
+
+>>> bg.integer_validator("x", -11)
+Traceback (most recent call last):
+ValueError: x must be greater than 0
+
+"""
