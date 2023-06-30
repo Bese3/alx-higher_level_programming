@@ -7,8 +7,8 @@ class Square:
         """
         The above function is a constructor that initializes an object with a given size.
         
-        :param size: The size parameter is used to specify the size of an object or data structure. It is
-        typically an integer value that represents the number of elements or the length of the object
+        :param size: The size parameter is used to specify the size of the sqaurew. It is typically an integer value 
+        
         """
         self.__size = size
 
