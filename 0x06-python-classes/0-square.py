@@ -8,6 +8,6 @@ class Square:
     """An empty class Square
 
     empty class 
-    
+
     """
-    pass
+    
