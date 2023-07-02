@@ -1,0 +1,21 @@
+"""
+Using say_my_name
+____________________
+
+
+>>> __import__('sys').path.insert(1, '../')
+>>> say_my_name = __import__('3-say_my_name').say_my_name
+
+>>> say_my_name(12)
+Traceback (most recent call last):
+TypeError: first_name must be a string
+
+>>> say_my_name("John", "Doe")
+My name is John Doe
+
+
+>>> say_my_name("Besufikad") 
+My name is Besufikad 
+
+
+"""
