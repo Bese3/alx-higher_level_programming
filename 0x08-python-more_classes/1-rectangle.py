@@ -2,11 +2,14 @@
 
 
 """
-  rectangle that computes width and height
+Module containing class Rectangle
 """
 
 
 class Rectangle:
+    """
+    A rectangle that has a width and height. Both are 0 by default.
+    """
     def __init__(self, width=0, height=0):
         """
         special method for a class
