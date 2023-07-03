@@ -12,7 +12,15 @@ class Rectangle:
     """
     def __init__(self, width=0, height=0):
         """
-        special method for a class
+        width and height are initialized here. Appropriate error is printed if
+        passed vars are incorrect
+
+        Args:
+            width (int): width of the rectangle
+            height (int): height of the rectangle
+        Attributes:
+            width (int): width of rectangle, initialized by constructor
+            height (int): height of rectangle, initialized by constructor
         """
         if type(width) is not int:
             raise TypeError("width must be an integer")
