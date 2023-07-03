@@ -10,6 +10,7 @@ class Rectangle:
     A rectangle that has a width and height. Both are 0 by default.
     """
     number_of_instances = 0
+    print_symbol = "#"
 
     def __init__(self, width=0, height=0):
         """
@@ -103,7 +104,7 @@ class Rectangle:
 
         for i in range(self.__height):
             for j in range(self.__width):
-                new_string += '#'
+                new_string += str(self.print_symbol)
             new_string += '\n' if i != self.__height - 1 else ""
         return new_string
 
@@ -114,4 +115,3 @@ class Rectangle:
         del self
         Rectangle.number_of_instances -= 1
         print("Bye rectangle...")
-    
