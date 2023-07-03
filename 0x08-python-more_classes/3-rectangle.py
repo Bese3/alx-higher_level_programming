@@ -102,5 +102,5 @@ class Rectangle:
         for i in range(self.__height):
             for j in range(self.__width):
                 new_string += '#'
-            new_string += '\n' if i != self.__height - 1 else ''
+            new_string += '\n' if i != self.__height - 1 else ""
         return new_string
