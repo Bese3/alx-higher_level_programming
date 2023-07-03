@@ -1,0 +1,21 @@
+"""
+Using say_my_name
+____________________
+
+>>> __import__('sys').path.insert(1 , '../')
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+>>> text_indentation("S.")
+S.
+
+
+>>> text_indentation(12)
+Traceback (most recent call last):
+TypeError: text must be a string
+
+
+
+
+
+
+"""
