@@ -6,7 +6,6 @@
 """
 
 
-
 class Rectangle:
     """
     Empty class rectangle.
