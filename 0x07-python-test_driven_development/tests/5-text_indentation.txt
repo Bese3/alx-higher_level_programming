@@ -13,9 +13,29 @@ S.
 Traceback (most recent call last):
 TypeError: text must be a string
 
+>>> text_indentation("The. Quick  . Brown. Fox . Jumps . Over   . The . Lazy \
+...                                             . ?     \
+...     Dog")
+The.
+Quick.
+Brown.
+Fox.
+Jumps.
+Over.
+The.
+Lazy.
+?
+Dog
 
 
+>>> text_indentation("          A   .     B                 ?    C")
+A.
+B?
+C
 
-
+>>> text_indentation("A.B?C:")
+A.
+B?
+C:
 
 """
