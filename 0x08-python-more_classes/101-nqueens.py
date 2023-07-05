@@ -48,7 +48,7 @@ is run directly, and not when it is imported as a module.
 """
 if __name__ == '__main__':
     if len(argv) != 2:
-        print("Usage: nqueens N")
+        print("Usage: nqueens N\n")
         exit(1)
     n = int(argv[1])
     if type(n) is not int:
