@@ -49,14 +49,14 @@ def matrix_mul(m_a, m_b):
         raise ValueError("m_a and m_b can't be multiplied")
     new_list = []
     for rows_a in m_a:
-        i = 0
+        coulumn_iterate = 0
         new_list.append([])
-        while i < len(m_b[0]):
+        while coulumn_iterate < len(m_b[0]):
             result = 0
             row_iterate = 0
             for rows_b in m_b:
-                result += rows_a[row_iterate] * rows_b[i]
+                result += rows_a[row_iterate] * rows_b[coulumn_iterate]
                 row_iterate += 1
             new_list[-1].append(result)
-            i += 1
+            coulumn_iterate += 1
     return new_list
