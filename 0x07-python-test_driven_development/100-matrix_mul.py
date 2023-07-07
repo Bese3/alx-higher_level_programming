@@ -59,4 +59,4 @@ def matrix_mul(m_a, m_b):
                 row_iterate += 1
             new_list[-1].append(result)
             i += 1
-    print(new_list)
+    return new_list
