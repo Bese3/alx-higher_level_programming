@@ -12,6 +12,7 @@ col = set()
 neg = set()
 pos = set()
 possible_solution = []
+# i = 0
 
 
 def backtrack_solution(r, n):
@@ -20,7 +21,7 @@ def backtrack_solution(r, n):
     to find all possible solutions to the N-Queens
     problem.
     """
-
+    # global i
     if r == n:
         return possible_solution
     for c in range(n):
@@ -33,6 +34,7 @@ def backtrack_solution(r, n):
         possible_solution[-1].append(r)
         possible_solution[-1].append(c)
         if len(possible_solution) == n:
+            # i +=1
             print(possible_solution)
         backtrack_solution(r + 1, n)
         col.remove(c)
@@ -58,3 +60,4 @@ if __name__ == '__main__':
         print("N must be at least 4")
         exit(1)
     backtrack_solution(0, n)
+    # print(i)
