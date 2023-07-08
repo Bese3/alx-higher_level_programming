@@ -1,55 +1,48 @@
-#include "lists.h"
+#include<stdio.h>
+#include"lists.h"
 
 /**
- * is_palindrome - checks if linked list @head is a palindrome
- * @head: the linked list to be checked if it's a palindrome
- * Return: 1 if it's a palindrome, 0 otherwise
+ * is_palindrome - checks if a linked list is a palindrome.
+ *
+ * @head: The head parameter is a pointer
+ * to a pointer of type listint_t. It represents the head
+ * of a linked list.
+ *
+ * Return: an integer value. If the given linked list
+ * is a palindrome, it will return 1. Otherwise, it
+ * will return 0.
  */
 int is_palindrome(listint_t **head)
 {
-	int i, list_len = (int) listint_len(*head);
-	int *h = malloc(sizeof(int) * list_len); /* Contains all n's in *head*/
-	listint_t *head_copy = *head;
-
-	if (!*head || ((*head)->n == 0 && (*head)->next == NULL))
-	{
-		free(h);
-		return (1);
-	}
-
-	for (i = 0; i < list_len; i++)
-	{
-		h[i] = (*head)->n;
-		*head = (*head)->next;
-	}
-	*head = head_copy; /* Return the head of the list back to the first item */
-
-	for (i = 0; i < list_len; i++)
-	{
-		if (h[i] == h[list_len - 1 - i])
-			continue;
-		free(h);
-		return (0);
-	}
-
-	free(h);
-	return (1);
-}
-
-/**
- * listint_len - length of a list
- * @h:pointer to list element
- * Return: size of list
- */
-size_t listint_len(const listint_t *h)
+if (head == NULL || *head == NULL)
+return (1);
+listint_t *slow = *head;
+listint_t *fast = *head;
+while (fast != NULL && fast->next != NULL && fast->next->next != NULL)
 {
-	size_t len = 0;
-
-	while (h)
-	{
-		len++;
-		h = h->next;
-	}
-
-	return (len);
+slow = slow->next;
+fast = fast->next->next;
+}
+listint_t *first_half = *head;
+listint_t *prev = NULL;
+listint_t *curr  = slow->next;
+while (curr != NULL)
+{
+listint_t *next = curr->next;
+curr->next = prev;
+prev = curr;
+curr = next;
+}
+slow->next = prev;
+listint_t *second_half = slow->next;
+while (first_half != NULL && second_half != NULL)
+{
+if (first_half->n != second_half->n)
+{
+return (0);
+}
+first_half = first_half->next;
+second_half = second_half->next;
+}
+return (1);
 }
