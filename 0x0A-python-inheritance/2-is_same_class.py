@@ -3,6 +3,7 @@
 a method to determine the class of an object
 """
 
+
 def is_same_class(obj, a_class):
     """
     The function checks if an object is an instance of a specific class.

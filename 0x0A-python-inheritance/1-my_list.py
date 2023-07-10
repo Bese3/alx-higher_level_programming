@@ -7,12 +7,17 @@ list
 
 
 class MyList(list):
+    """
+    Inherits list and adds a method print_sorted that
+    """
+    def __init__(self):
+        """
+        Calls the super class's init, nothing more
+        """
+        super().__init__()
+
     def print_sorted(self):
         """
-        The function takes a list, creates a new sorted list,
-        and then prints the sorted list.
+        Prints a sorted version of the class's instance
         """
-        new_list = self[:]
-        new_list.sort()
-        print(new_list)
-        return new_list
+        print(sorted(self))
