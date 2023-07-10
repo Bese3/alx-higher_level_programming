@@ -29,4 +29,4 @@ class Rectangle(BaseGeometry):
         printing nicely when an instance is called
         """
         return "[{}] {}/{}"\
-            .format(self.__class__.__name__, self.__width, self.__height)
+            .format("Rectangle", self.__width, self.__height)
