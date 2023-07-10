@@ -1,0 +1,30 @@
+"""
+Using '7-base_geometry'
+______________________
+
+>>> __import__('sys').path.insert(1, '../')
+
+>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
+>>> bg = BaseGeometry()
+>>> bg.integer_validator("x", 2)
+
+>>> bg.integer_validator("x", 2.5)
+Traceback (most recent call last):
+TypeError: x must be an integer
+
+
+>>> bg.integer_validator("x", 23.4)
+Traceback (most recent call last):
+TypeError: x must be an integer
+
+>>> bg.integer_validator("x", 0)
+Traceback (most recent call last):
+ValueError: x must be greater than 0
+
+>>> bg.integer_validator("x", [1, 2, 3])
+Traceback (most recent call last):
+TypeError: x must be an integer
+
+
+"""
