@@ -21,7 +21,10 @@ class BaseGeometry():
         if a given value is an integer and greater than 0,
         and raises appropriate errors if not.
         """
-        if type(value) != int:
-            raise TypeError(F"{name} must be an integer")
-        if value <= 0:
-            raise ValueError(F"{name} must be greater than 0")
+        try:
+            if type(value) != int:
+                raise TypeError(F"{name} must be an integer")
+            if value <= 0:
+                raise ValueError(F"{name} must be greater than 0")
+        except NameError:
+            raise TypeError(F"{name} must  be an integer")
