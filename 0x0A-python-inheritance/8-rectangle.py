@@ -23,7 +23,7 @@ class Rectangle(BaseGeometry):
          of the object or shape being represented. It
          is used to initialize the height attribute of the object
         """
-        BaseGeometry.integer_validator(self, "width", width)
+        self.integer_validator("width", width)
         self.__width = width
-        BaseGeometry.integer_validator(self, "height", height)
+        self.integer_validator("height", height)
         self.__height = height
