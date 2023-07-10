@@ -5,6 +5,9 @@ a class to build upon next project
 
 
 class BaseGeometry():
+    """
+    class with just one method
+    """
     def area(self):
         """
         The function area() raises an exception indicating
