@@ -23,8 +23,8 @@ class BaseGeometry():
         """
         try:
             if type(value) != int:
-                raise TypeError(F"{name} must be an integer")
+                raise TypeError(name + " must be an integer")
             if value <= 0:
-                raise ValueError(F"{name} must be greater than 0")
+                raise ValueError(name + " must be greater than 0")
         except NameError:
-            raise TypeError(F"{name} must  be an integer")
+            raise TypeError(name + " must be an integer")
