@@ -8,6 +8,13 @@ Importing class from the module:
     >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
 
+Trying to print the area
+    >>> bg = BaseGeometry()
+    >>> bg.area()
+    Traceback (most recent call last):
+    	      ...
+    Exception: area() is not implemented
+
 
 Trying to pass a non-integer argument
     >>> bg = BaseGeometry()
@@ -46,10 +53,46 @@ Passing a positive value
     >>> bg.integer_validator("name", 5)
 
 
+Passing one argument to integer_validator
+    >>> bg = BaseGeometry()
+    >>> bg.integer_validator("name") # doctest: +ELLIPSIS, +IGNORE_EXCEPTION_DETAIL
+    Traceback (most recent call last):
+    	      ...
+    TypeError: integer_validator() missing 1 required positional argument: 'value'
+
+Integer_validator with no arguments
+    >>> bg = BaseGeometry()
+    >>> bg.integer_validator()    # doctest: +ELLIPSIS, +IGNORE_EXCEPTION_DETAIL
+    Traceback (most recent call last):
+    	      ...
+    TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
+
+
+Passing three arguments to integer_validator
+    >>> bg = BaseGeometry()
+    >>> bg.integer_validator("name", 1, 2)   # doctest: +ELLIPSIS, +IGNORE_EXCEPTION_DETAIL
+    Traceback (most recent call last):
+    	      ...
+    TypeError: integer_validator() takes 3 positional arguments but 4 were given
+
+
+Passing one argument to area method
+    >>> bg = BaseGeometry()
+    >>> bg.area(5)   # doctest: +ELLIPSIS, +IGNORE_EXCEPTION_DETAIL
+    Traceback (most recent call last):
+    	      ...
+    TypeError: area() takes 1 positional argument but 2 were given
+
+Passing two arguments to area method
+    >>> bg = BaseGeometry()
+    >>> bg.area(5, 5)   # doctest: +ELLIPSIS, +IGNORE_EXCEPTION_DETAIL
+    Traceback (most recent call last):
+    	      ...
+    TypeError: area() takes 1 positional argument but 3 were given
 
 Passing tuple to method
     >>> bg = BaseGeometry()
-    >>> bg.integer_validator("age", (4,))
+    >>> bg.integer_validator("age", (4,))  # doctest: +ELLIPSIS, +IGNORE_EXCEPTION_DETAIL
     Traceback (most recent call last):
     	      ...
     TypeError: age must be an integer
@@ -57,7 +100,7 @@ Passing tuple to method
 
 Passing list to method
     >>> bg = BaseGeometry()
-    >>> bg.integer_validator("age", [3])
+    >>> bg.integer_validator("age", [3])   # doctest: +ELLIPSIS, +IGNORE_EXCEPTION_DETAIL
     Traceback (most recent call last):
     	      ...
     TypeError: age must be an integer
@@ -65,7 +108,7 @@ Passing list to method
 
 Passing dict to method
     >>> bg = BaseGeometry()
-    >>> bg.integer_validator("age", {3, 4})
+    >>> bg.integer_validator("age", {3, 4})  # doctest: +ELLIPSIS, +IGNORE_EXCEPTION_DETAIL
     Traceback (most recent call last):
               ...
     TypeError: age must be an integer
@@ -73,7 +116,7 @@ Passing dict to method
 
 Passing None to method
     >>> bg = BaseGeometry()
-    >>> bg.integer_validator("age", None)
+    >>> bg.integer_validator("age", None)   # doctest: +ELLIPSIS, +IGNORE_EXCEPTION_DETAIL
     Traceback (most recent call last):
               ...
     TypeError: age must be an integer
