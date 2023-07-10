@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+"""
+a method to determine the class of an object
+"""
 
 def is_same_class(obj, a_class):
     """
