@@ -4,6 +4,7 @@ BaseGeometry = __import__('7-base_geometry').BaseGeometry
 calling BaseGeometry from other module
 """
 
+
 class Rectangle(BaseGeometry):
     """
       The Rectangle class is a subclass of BaseGeometry
