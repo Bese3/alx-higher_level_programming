@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-a class to build upon next projects
+a class to build upon next project
 """
 
 
