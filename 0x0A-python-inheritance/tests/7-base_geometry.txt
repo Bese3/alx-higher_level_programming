@@ -26,5 +26,21 @@ ValueError: x must be greater than 0
 Traceback (most recent call last):
 TypeError: x must be an integer
 
+>>> bg.integer_validator("x", -5)
+Traceback (most recent call last):
+ValueError: x must be greater than 0
+
+>>> bg.integer_validator("x", 0)
+Traceback (most recent call last):
+ValueError: x must be greater than 0
+
+>>> bg.integer_validator("x", -1000000000)
+Traceback (most recent call last):
+ValueError: x must be greater than 0
+
+>>> bg.integer_validator("x", -11)
+Traceback (most recent call last):
+ValueError: x must be greater than 0
+
 
 """
