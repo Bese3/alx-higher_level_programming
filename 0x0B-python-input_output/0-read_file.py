@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-reading text a file using open method
+reading text in a file using open method
 """
 
 
@@ -13,5 +13,5 @@ def read_file(filename=""):
     """
     if filename == '' or filename is None:
         return
-    with open(filename, mode="r") as f:
-        print(f.read(), end="\n")
+    with open(filename, mode="r", encoding="utf-8") as f:
+        print(f.read(), end="")
