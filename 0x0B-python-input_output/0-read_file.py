@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-reading text from a file
+reading text a file using open method
 """
 
 
