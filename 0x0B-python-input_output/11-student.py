@@ -18,17 +18,11 @@ class Student:
         self.age = age
 
     def to_json(self, attrs=None):
-        """Get a dictionary representation of the Student.
-
-        If attrs is a list of strings, represents only those attributes
-        included in the list.
-
-        Args:
-            attrs (list): (Optional) The attributes to represent.
-        """
+        """Get a dictionary representation of the Student."""
         if (type(attrs) == list and
-                all(type(ele) == str for ele in attrs)):
-            return {k: getattr(self, k) for k in attrs if hasattr(self, k)}
+                all(type(attr) == str for attr in attrs)):
+            return {attr: getattr(self, attr)
+                    for attr in attrs if hasattr(self, attr)}
         return self.__dict__
 
     def reload_from_json(self, json):
@@ -37,5 +31,5 @@ class Student:
         Args:
             json (dict): The key/value pairs to replace attributes with.
         """
-        for k, v in json.items():
-            setattr(self, k, v)
+        for key, values in json.items():
+            setattr(self, key, values)
