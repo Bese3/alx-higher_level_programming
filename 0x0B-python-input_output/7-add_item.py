@@ -15,5 +15,5 @@ if __name__ == "__main__":
         with open("add_item.json", mode="w") as f:
             f.write("[]")
             if len(sys.argv) != 1:
-                f.seek(1    )
+                f.seek(1)
                 save_to_json_file(sys.argv[1:], "add_item.json")
