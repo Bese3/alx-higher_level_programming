@@ -45,3 +45,73 @@ class test_rectangle(unittest.TestCase):
         r5.height = 10
         self.assertEqual(r5.height, 10)
         del r5
+
+    def test_validators(self):
+        """
+        The function `test_validators` tests the validators
+        in the `Rectangle` class to ensure that the
+        attributes are of the correct type and value.
+        """
+        with self.assertRaises(TypeError) as err:
+            Rectangle("1", 2, 3, 4, 5)
+        self.assertTrue("width must be an integer" in str(err.exception))
+        with self.assertRaises(TypeError)as err:
+            Rectangle(1, "2", 3, 4, 5)
+        self.assertTrue("height must be an integer" in str(err.exception))
+        with self.assertRaises(TypeError) as err:
+            Rectangle(1, 2, "3", 4, 5)
+            self.assertTrue("x must be an integer" in str(err.exception))
+        with self.assertRaises(TypeError) as err:
+            Rectangle(1, 2, 3, "4", 5)
+            self.assertTrue("y must be an integer" in str(err.exception))
+        with self.assertRaises(ValueError) as err:
+            Rectangle(-1, 2, 3, 4, 5)
+            self.assertTrue("width must be > 0" in str(err.exception))
+        with self.assertRaises(ValueError) as err:
+            Rectangle(1, -2, 3, 4, 5)
+            self.assertTrue("height must be > 0" in str(err.exception))
+        with self.assertRaises(ValueError) as err:
+            Rectangle(1, 2, -3, 4, 5)
+            self.assertTrue("x must be >= 0" in str(err.exception))
+        with self.assertRaises(ValueError) as err:
+            Rectangle(1, 2, 3, -4, 5)
+            self.assertTrue("y must be >= 0" in str(err.exception))
+        with self.assertRaises(ValueError) as err:
+            Rectangle(-1, "2", 3, 4, 5)
+            self.assertTrue("width must be > 0" in str(err.exception))
+        with self.assertRaises(ValueError) as err:
+            Rectangle(0, 0, 3, 4, 5)
+            self.assertTrue("width must be > 0" in str(err.exception))
+        with self.assertRaises(ValueError) as err:
+            Rectangle(1, 0, 3, 4, 5)
+            self.assertTrue("height must be > 0" in str(err.exception))
+        with self.assertRaises(TypeError) as err:
+            Rectangle(1, "2", "3", 4, 5)
+            self.assertTrue("height must be > 0" in str(err.exception))
+        # using setters
+        r6 = Rectangle(1, 2, 3, 4, 5)
+        with self.assertRaises(TypeError)as err:
+            r6.width = "2"
+        self.assertTrue("width must be an integer" in str(err.exception))
+        with self.assertRaises(TypeError) as err:
+            r6.height = "2"
+        self.assertTrue("height must be an integer" in str(err.exception))
+        with self.assertRaises(TypeError) as err:
+            r6.x = "2"
+        self.assertTrue("x must be an integer" in str(err.exception))
+        with self.assertRaises(TypeError) as err:
+            r6.y = "2"
+        self.assertTrue("y must be an integer" in str(err.exception))
+        with self.assertRaises(ValueError) as err:
+            r6.width = 0
+        self.assertTrue("width must be > 0" in str(err.exception))
+        with self.assertRaises(ValueError) as err:
+            r6.height = 0
+        self.assertTrue("height must be > 0" in str(err.exception))
+        with self.assertRaises(ValueError) as err:
+            r6.x = -1
+        self.assertTrue("x must be >= 0" in str(err.exception))
+        with self.assertRaises(ValueError) as err:
+            r6.y = -1
+        self.assertTrue("y must be >= 0" in str(err.exception))
+        del r6
