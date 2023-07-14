@@ -115,3 +115,18 @@ class test_rectangle(unittest.TestCase):
             r6.y = -1
         self.assertTrue("y must be >= 0" in str(err.exception))
         del r6
+
+    def test_area(self):
+        """
+        The function tests the area calculation of a rectangle
+        object with different dimensions and positions.
+        """
+        r7 = Rectangle(10, 10, id=12)
+        self.assertEqual(r7.area(), 100)
+        r7.width = 12
+        r7.height = 12
+        self.assertEqual(144, r7.area())
+        r7.x = 20
+        r7.y = 20
+        self.assertEqual(144, r7.area())
+        del r7
