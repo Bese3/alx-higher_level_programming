@@ -130,3 +130,4 @@ class test_rectangle(unittest.TestCase):
         r7.y = 20
         self.assertEqual(144, r7.area())
         del r7
+
