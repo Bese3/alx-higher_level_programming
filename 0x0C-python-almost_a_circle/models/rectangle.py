@@ -97,14 +97,23 @@ class Rectangle(Base):
 
     def display(self):
         """
-        The code `for i in range(self.__height):` is a loop that iterates
+        This function displays using x,y,width and height
         """
+        for k in range(self.__y):
+            print()
         for i in range(self.__height):
+            for m in range(self.__x):
+                print(" ", end="")
             for j in range(self.__width):
                 print("#", end="")
             print()
 
     def __str__(self):
+        """
+        The function returns a string representation
+        of a Rectangle object, including its id,coordinates,
+        width, and height.
+        """
         string = F"[Rectangle] ({self.id}) {self.__x}/{self.__y}" + \
             F" - {self.__width}/{self.__height}"
         return string

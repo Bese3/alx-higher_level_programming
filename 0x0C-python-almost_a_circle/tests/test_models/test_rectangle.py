@@ -12,7 +12,7 @@ class test_rectangle(unittest.TestCase):
         The function tests the id attribute
         of the Rectangle class.
         """
-        r = Rectangle(10, 2)
+        r = Rectangle(10, 2) 
         self.assertEqual(1, r.id)
         r2 = Rectangle(2, 10)
         self.assertEqual(r2.id, 2)
@@ -39,7 +39,7 @@ class test_rectangle(unittest.TestCase):
         The function tests the setter methods of the Rectangle
         class by setting the width and height
         """
-        r5 = Rectangle(5, 5)
+        r5 = Rectangle(5, 5, id=12)
         r5.width = 10
         self.assertEqual(r5.width, 10)
         r5.height = 10
