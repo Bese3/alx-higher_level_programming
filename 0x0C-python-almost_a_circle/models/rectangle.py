@@ -118,7 +118,7 @@ class Rectangle(Base):
             F" - {self.__width}/{self.__height}"
         return string
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """
         The function updates the attributes of an object
         with the values provided in the arguments.
@@ -132,3 +132,6 @@ class Rectangle(Base):
                 self.__y = args[4]
             except IndexError:
                 pass
+        else:
+            for i, j in kwargs.items():
+                setattr(self, i, j)
