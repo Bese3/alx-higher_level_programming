@@ -42,10 +42,20 @@ class Square(Rectangle):
                 self.x = args[2]
                 self.y = args[3]
             except IndexError:
-                pass    
+                pass
         else:
             for i, j in kwargs.items():
                 setattr(self, i, j)
+
+    def to_dictionary(self):
+        """
+        The function `to_dictionary` returns
+        a dictionary with the attributes of an object.
+        """
+        first = {'id': self.id, 'x': self.x, 'size': self.size}
+        second = {'y':self.y}
+        first.update(second)
+        return first
 
     def __str__(self):
         """
