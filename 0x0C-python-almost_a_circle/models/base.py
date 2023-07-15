@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+import json
 
 """Base class for all projec to be done"""
 
@@ -26,6 +27,10 @@ class Base:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
 
+    def to_json_string(list_dictionaries):
+        if list_dictionaries is None:
+            return []
+        return json.dumps(list_dictionaries)
     def __del__(self):
         if Base.__nb_objects > 0:
             Base.__nb_objects -= 1

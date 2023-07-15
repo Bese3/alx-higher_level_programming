@@ -141,7 +141,7 @@ class Rectangle(Base):
         The function `to_dictionary` returns
         a dictionary with the attributes of an object.
         """
-        first = {'x': self.id, 'y': self.y, 'id': self.id}
+        first = {'x': self.x, 'y': self.y, 'id': self.id}
         second = {'height': self.height, 'width': self.width}
         first.update(second)
         return first
