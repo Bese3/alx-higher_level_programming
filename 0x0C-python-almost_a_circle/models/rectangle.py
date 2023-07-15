@@ -135,3 +135,13 @@ class Rectangle(Base):
         else:
             for i, j in kwargs.items():
                 setattr(self, i, j)
+
+    def to_dictionary(self):
+        """
+        The function `to_dictionary` returns
+        a dictionary with the attributes of an object.
+        """
+        first = {'x': self.id, 'y': self.y, 'id': self.id}
+        second = {'height': self.height, 'width': self.width}
+        first.update(second)
+        return first
