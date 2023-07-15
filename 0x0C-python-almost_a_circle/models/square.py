@@ -12,6 +12,28 @@ class Square(Rectangle):
         """
         super().__init__(size, size, x, y, id)
 
+    @property
+    def size(self):
+        """
+        The size function returns the width of an object.
+        :return: The width of the object.
+        """
+        return self.width
+
+    @size.setter
+    def size(self, value):
+        """
+        The function sets the width and height of
+        an object to a given value, but raises errors if the
+        value is not an integer or is less than or equal to zero.
+        """
+        if type(value) is not int:
+            raise TypeError("width must be an integer")
+        if value <= 0:
+            raise ValueError("width must be > 0")
+        self.width = value
+        self.height = value
+
     def __str__(self):
         """
         The function returns a string representation
@@ -19,5 +41,5 @@ class Square(Rectangle):
         width, and height.
         """
         string = F"[Square] ({self.id}) {self.x}/{self.y}" + \
-            F" - {self.width}/{self.height}"
+            F" - {self.width}"
         return string
