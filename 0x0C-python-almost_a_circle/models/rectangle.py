@@ -146,7 +146,3 @@ class Rectangle(Base):
         second = {'height': self.height, 'width': self.width}
         first.update(second)
         return first
-
-    @classmethod
-    def save_to_file(cls, list_objs):
-        pass

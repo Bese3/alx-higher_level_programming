@@ -3,6 +3,7 @@ import json
 
 """Base class for all projec to be done"""
 
+
 class Base:
     """
     The `Base` class initializes objects with
@@ -35,6 +36,26 @@ class Base:
         if list_dictionaries is None:
             return []
         return json.dumps(list_dictionaries)
+
+    @classmethod
+    def save_to_file(cls, list_objs):
+        new = []
+        # print(cls.__name__ + ".json")
+        with open(cls.__name__ + ".json", mode="w") as f:
+            if list_objs is None or list_objs == []:
+                f.write("[]")
+                return
+            for i in range(len(list_objs)):
+                if i == 0:
+                    first = "["
+                else:
+                    first = ""
+                if i != len(list_objs) - 1:
+                    last = ", "
+                else:
+                    last = "]"
+                f.write(first + Base.to_json_string
+                        (cls.to_dictionary(list_objs[i])) + last)
 
     def __del__(self):
         """
