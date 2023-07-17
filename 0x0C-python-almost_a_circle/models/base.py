@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-"""Base class for all projec to be done"""
+"""Base class for all project to be done"""
 import json
 
 
