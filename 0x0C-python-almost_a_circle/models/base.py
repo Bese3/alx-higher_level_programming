@@ -1,7 +1,7 @@
 #!/usr/bin/python3
-import json
 
 """Base class for all projec to be done"""
+import json
 
 
 class Base:
@@ -26,7 +26,7 @@ class Base:
             self.id = id
         else:
             Base.__nb_objects += 1
-            self.id = Base.__nb_objects
+            self.id = self.__nb_objects
 
     @staticmethod
     def to_json_string(list_dictionaries):
@@ -58,8 +58,9 @@ class Base:
                 else:
                     last = "]"
                 f.write(first + Base.to_json_string
-                        (cls.to_dictionary(list_objs[i])) + last)
+                        ((list_objs[i]).to_dictionary()) + last)
 
+    @staticmethod
     def from_json_string(json_string):
         """
         The function `from_json_string`
