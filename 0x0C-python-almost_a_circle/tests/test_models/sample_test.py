@@ -1,13 +1,13 @@
 #!/usr/bin/python3
 from test_base import TestBase
-# from test_rectangle import RectangleTest
+from test_rectangle import TestRectangle
 
 test_obj_base = TestBase()
-# test_obj_rect = RectangleTest()
+test_obj_rect = TestRectangle()
 
-# test_obj_base.test_1_None_id()
-# test_obj_base.test_2_passed_id()
-# test_obj_base.test_3_None_and_passed_mix()
+test_obj_base.test_id()
+test_obj_base.test_getter()
+test_obj_base.test_setter()
 
 # test_obj_rect.test_getters_setters()
 # test_obj_rect.test_import_works_correctly()

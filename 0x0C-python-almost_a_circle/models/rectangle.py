@@ -9,6 +9,7 @@ x, y, and id, and methods for validating and setting these attributes.
 
 class Rectangle(Base):
     """defination of the Rectangle class inerited from Base"""
+
     def __init__(self, width, height, x=0, y=0, id=None):
         """
         The function initializes an object with
@@ -43,10 +44,12 @@ class Rectangle(Base):
 
     @property
     def width(self):
+        """Get width of Rectangle"""
         return self.__width
 
     @width.setter
     def width(self, value):
+        """Set width to value, raises exception"""
         if type(value) is not int:
             raise TypeError("width must be an integer")
         if value <= 0:
@@ -55,10 +58,12 @@ class Rectangle(Base):
 
     @property
     def height(self):
+        """Get height of Rectangle"""
         return self.__height
 
     @height.setter
     def height(self, value):
+        """Set the Rectangle's height to value, raises exception"""
         if type(value) is not int:
             raise TypeError("height must be an integer")
         if value <= 0:
@@ -67,10 +72,12 @@ class Rectangle(Base):
 
     @property
     def x(self):
+        """Get the X value"""
         return self.__x
 
     @x.setter
     def x(self, value):
+        """Sets the X value"""
         if type(value) is not int:
             raise TypeError("x must be an integer")
         if value < 0:
@@ -79,10 +86,12 @@ class Rectangle(Base):
 
     @property
     def y(self):
+        """Gets the Y value"""
         return self.__y
 
     @y.setter
     def y(self, value):
+        """Sets the Y value"""
         if type(value) is not int:
             raise TypeError("y must be an integer")
         if value < 0:
@@ -99,14 +108,20 @@ class Rectangle(Base):
         """
         This function displays using x,y,width and height
         """
+        rectangle = ""
         for k in range(self.__y):
             print()
+            rectangle += "\n"
         for i in range(self.__height):
             for m in range(self.__x):
                 print(" ", end="")
+                rectangle += " "
             for j in range(self.__width):
                 print("#", end="")
+                rectangle += "#"
+            rectangle += "\n"
             print()
+        return rectangle
 
     def __str__(self):
         """
@@ -114,8 +129,8 @@ class Rectangle(Base):
         of a Rectangle object, including its id,coordinates,
         width, and height.
         """
-        string = F"[Rectangle] ({self.id}) {self.__x}/{self.__y}" + \
-            F" - {self.__width}/{self.__height}"
+        string = F"[Rectangle] ({self.id}) {self.x}/{self.y}" + \
+            F" - {self.width}/{self.height}"
         return string
 
     def update(self, *args, **kwargs):
