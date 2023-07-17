@@ -70,6 +70,21 @@ class Base:
             return []
         return json.loads(json_string)
 
+    @classmethod
+    def create(cls, **dictionary):
+        """
+        The function creates an instance of
+        a class and updates its attributes using a dictionary.
+        """
+        if dictionary and dictionary != {}:
+            if cls.__name__ == "Rectangle":
+                this = cls(1, 1)
+            else:
+                this = cls(1)
+            this.update(**dictionary)
+            return this
+        return []
+
     def __del__(self):
         """
         The __del__ function decreases the value

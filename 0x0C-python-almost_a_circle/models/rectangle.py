@@ -136,7 +136,6 @@ class Rectangle(Base):
             for i, j in kwargs.items():
                 setattr(self, i, j)
 
-    @staticmethod
     def to_dictionary(self):
         """
         The function `to_dictionary` returns
