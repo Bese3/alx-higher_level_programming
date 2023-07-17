@@ -1,14 +1,18 @@
 #!/usr/bin/python3
-from models.base import Base
 """
 The Rectangle class is defined as a subclass of the
 Base class, with attributes for width, height,
 x, y, and id, and methods for validating and setting these attributes.
 """
+from models.base import Base
 
 
 class Rectangle(Base):
-    """defination of the Rectangle class inerited from Base"""
+    """
+    Inherits and extends from Base
+    Calculates the area of a Rectangle, prints a Rectangle based on its
+    width and height
+    """
 
     def __init__(self, width, height, x=0, y=0, id=None):
         """
