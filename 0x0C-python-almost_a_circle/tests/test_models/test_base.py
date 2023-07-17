@@ -90,8 +90,7 @@ class TestBase(unittest.TestCase):
                          '{"x": 0, "y": 0, "id": 1, "height": 7, "width": 10}')
         a.update(x=10, y=9)
         self.assertEqual(a.to_json_string(a.to_dictionary()),
-                         '{"x": 10, "y": 9, "id": 1,\
-                           "height": 7, "width": 10}')
+                         '{"x": 10, "y": 9, "id": 1, "height": 7, "width": 10}')
         self.assertEqual(a.to_json_string([]), "[]")
         self.assertEqual(a.to_json_string(None), "[]")
         del a
@@ -116,8 +115,7 @@ class TestBase(unittest.TestCase):
         with open(Rectangle.__name__ + ".json",
                   mode="r", encoding="utf-8") as f:
             self.assertEqual(f.read(),
-                             '[{"x": 0, "y": 0, "id": 1,\
-                               "height": 4, "width": 2}]')
+                             '[{"x": 0, "y": 0, "id": 1, "height": 4, "width": 2}]')
         a.__del__()
         rectangles = [Rectangle(1, 2, 3, 4),
                       Rectangle(5, 6, 7, 8),
