@@ -12,7 +12,7 @@ class TestRectangle(unittest.TestCase):
         The function tests the id attribute
         of the Rectangle class.
         """
-        r = Rectangle(10, 2) 
+        r = Rectangle(10, 2)
         self.assertEqual(1, r.id)
         r2 = Rectangle(2, 10)
         self.assertEqual(r2.id, 2)
@@ -210,7 +210,7 @@ class TestRectangle(unittest.TestCase):
 
     def test_to_dictionary(self):
         """
-        The function tests the `to_dictionary` method of the 
+        The function tests the `to_dictionary` method of the
         `Rectangle` class by creating instances of `Rectangle`
         """
         r1 = Rectangle(10, 10, 10, 10, 10)
