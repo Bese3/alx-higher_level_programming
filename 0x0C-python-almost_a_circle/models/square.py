@@ -1,5 +1,11 @@
 #!/usr/bin/python3
-"""importing everything"""
+
+"""
+Module square
+Contains class Square, which inherits from Rectangle
+"""
+
+
 from models.rectangle import Rectangle
 
 
