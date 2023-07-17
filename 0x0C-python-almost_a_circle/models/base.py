@@ -50,14 +50,12 @@ class Base:
                 return
             for i in range(len(list_objs)):
                 if i == 0:
-                    first = "["
-                else:
-                    first = ""
+                    f.write("[")
                 if i != len(list_objs) - 1:
                     last = ", "
                 else:
                     last = "]"
-                f.write(first + Base.to_json_string
+                f.write(Base.to_json_string
                         ((list_objs[i]).to_dictionary()) + last)
 
     @staticmethod
