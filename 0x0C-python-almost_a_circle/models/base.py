@@ -44,6 +44,7 @@ class Base:
         The function `save_to_file` saves a
         list of objects to a JSON file.
         """
+
         with open(cls.__name__ + ".json", mode="w") as f:
             if list_objs is None or list_objs == []:
                 f.write("[]")
