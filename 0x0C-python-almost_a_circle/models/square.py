@@ -10,7 +10,11 @@ from models.rectangle import Rectangle
 
 
 class Square(Rectangle):
-    """Square class that inherits from Rectangle"""
+    """
+    The `Square` class is a subclass of `Rectangle`
+    that represents a square object with a given size,
+    position, and optional id.
+    """
 
     def __init__(self, size, x=0, y=0, id=None):
         """
