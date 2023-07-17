@@ -53,7 +53,7 @@ class Square(Rectangle):
         a dictionary with the attributes of an object.
         """
         first = {'id': self.id, 'x': self.x, 'size': self.size}
-        second = {'y':self.y}
+        second = {'y': self.y}
         first.update(second)
         return first
 

@@ -85,6 +85,31 @@ class Base:
             return this
         return []
 
+    @classmethod
+    def load_from_file(cls):
+        """
+        The function `load_from_file` loads data from
+        a JSON file and creates instances of a class based
+        on the data.
+        """
+        try:
+            with open(cls.__name__ + ".json", mode="r", encoding="utf-8") as f:
+                w = f.read()
+                new = []
+                pyth_obj = Base.from_json_string(w)
+                # print(pyth_obj)
+                for i in pyth_obj:
+                    if cls.__name__ == "Rectangle":
+                        rect_sq = cls(1, 1)
+                        rect_sq.update(**i)
+                    else:
+                        rect_sq = cls(1)
+                        rect_sq.update(**i)
+                    new.append(rect_sq)
+        except FileNotFoundError:
+            return []
+        return new
+
     def __del__(self):
         """
         The __del__ function decreases the value
