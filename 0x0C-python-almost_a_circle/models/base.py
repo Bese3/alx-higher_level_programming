@@ -28,13 +28,14 @@ class Base:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
 
+    @staticmethod
     def to_json_string(list_dictionaries):
         """
         The function `to_json_string` converts
         a list of dictionaries into a JSON string.
         """
-        if list_dictionaries is None:
-            return []
+        if list_dictionaries is None or list_dictionaries == []:
+            return "[]"
         return json.dumps(list_dictionaries)
 
     @classmethod
@@ -43,8 +44,6 @@ class Base:
         The function `save_to_file` saves a
         list of objects to a JSON file.
         """
-        new = []
-        # print(cls.__name__ + ".json")
         with open(cls.__name__ + ".json", mode="w") as f:
             if list_objs is None or list_objs == []:
                 f.write("[]")
@@ -66,7 +65,7 @@ class Base:
         The function `from_json_string`
         converts a JSON string into a Python object.
         """
-        if json_string is None:
+        if json_string is None or json_string == "":
             return []
         return json.loads(json_string)
 
@@ -94,10 +93,10 @@ class Base:
         """
         try:
             with open(cls.__name__ + ".json", mode="r", encoding="utf-8") as f:
-                w = f.read()
+                if f.read() is None:
+                    return []
                 new = []
-                pyth_obj = Base.from_json_string(w)
-                # print(pyth_obj)
+                pyth_obj = Base.from_json_string(f.read())
                 for i in pyth_obj:
                     if cls.__name__ == "Rectangle":
                         rect_sq = cls(1, 1)
