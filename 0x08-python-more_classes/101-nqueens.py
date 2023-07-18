@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-# The code is importing the `argv`
+The code is importing the `argv`
 variable from the `sys` module,
 which allows the script to access
 command-line arguments.
@@ -12,7 +12,6 @@ col = set()
 neg = set()
 pos = set()
 possible_solution = []
-# i = 0
 
 
 def backtrack_solution(r, n):
@@ -21,9 +20,9 @@ def backtrack_solution(r, n):
     to find all possible solutions to the N-Queens
     problem.
     """
-    # global i
+
     if r == n:
-        return possible_solution
+        return
     for c in range(n):
         if c in col or (r - c) in neg or (r + c) in pos:
             continue
@@ -34,7 +33,6 @@ def backtrack_solution(r, n):
         possible_solution[-1].append(r)
         possible_solution[-1].append(c)
         if len(possible_solution) == n:
-            # i +=1
             print(possible_solution)
         backtrack_solution(r + 1, n)
         col.remove(c)
@@ -48,6 +46,8 @@ The `if __name__ == '__main__':` block is used to ensure
 that the code inside it is only executedwhen the script
 is run directly, and not when it is imported as a module.
 """
+
+
 if __name__ == '__main__':
     if len(argv) != 2:
         print("Usage: nqueens N")
@@ -60,4 +60,3 @@ if __name__ == '__main__':
         print("N must be at least 4")
         exit(1)
     backtrack_solution(0, n)
-    # print(i)
