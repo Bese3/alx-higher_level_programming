@@ -91,18 +91,11 @@ class Base:
         """
         try:
             with open(cls.__name__ + ".json", mode="r", encoding="utf-8") as f:
-                if f.read() is None:
-                    return []
                 new = []
                 pyth_obj = Base.from_json_string(f.read())
                 for i in pyth_obj:
-                    if cls.__name__ == "Rectangle":
-                        rect_sq = cls(1, 1)
-                        rect_sq.update(**i)
-                    else:
-                        rect_sq = cls(1)
-                        rect_sq.update(**i)
-                    new.append(rect_sq)
+                    new.append(cls.create(**i))
+                # return new
         except FileNotFoundError:
             return []
         return new

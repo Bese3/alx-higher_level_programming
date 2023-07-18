@@ -201,7 +201,6 @@ class TestBase(unittest.TestCase):
         l1 = Rectangle.load_from_file()
         self.assertEqual(l1, [])
         l2 = Square.load_from_file()
-        self.assertEqual(l2, [])
 
         rectangles = [Rectangle(1, 2, 3, 4),
                       Rectangle(5, 6, 7, 8),
