@@ -1,4 +1,4 @@
-## Learning Objectives
+# Learning Objectives
 * Why Python programming is awesome
 * What is OOP
 * “first-class everything”
