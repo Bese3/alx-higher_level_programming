@@ -4,12 +4,10 @@
 class Square:
     def __init__(self , size=0):
         """
-        The above code defines a class with a constructor that initializes a size attribute, a method to
-        calculate the area of a square, and getter and setter methods for the size attribute.
-        
-        :param size: The "size" parameter is used to specify the size of an object. It is an integer
-        value that represents the length or width of the object. The size must be a non-negative integer,
-        defaults to 0 (optional)
+        The above code defines a class with a constructor
+        that initializes a size attribute, a method to
+        calculate the area of a square, and getter and
+        setter methods for the size attribute.
         """
         if type(size) is  not int:
             raise TypeError("size must be an integer")

@@ -4,12 +4,9 @@
 class Square:
     def __init__(self , size=0):
         """
-        The above code defines a class with methods to calculate the area of a square, set and get the
+        The above code defines a class with methods
+        to calculate the area of a square, set and get the
         size of the square, and print a square of a given size.
-        
-        :param size: The "size" parameter represents the size of a square. It is an optional parameter
-        with a default value of 0. The size must be an integer and greater than or equal to 0, defaults
-        to 0 (optional)
         """
         if type(size) is  not int:
             raise TypeError("size must be an integer")
