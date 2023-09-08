@@ -2,6 +2,7 @@
 
 """creating sorted singlylinkedlist"""
 
+
 class Node:
     """node class for singlylinkedlist"""
     def __init__(self, data, next_node=None):
