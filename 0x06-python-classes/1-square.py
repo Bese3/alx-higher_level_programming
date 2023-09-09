@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 
-# The Square class represents a square shape.
+"""The Square class represents a square shape."""
+
+
 class Square:
     """square class"""
     def __init__(self, size):
