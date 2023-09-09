@@ -4,6 +4,7 @@
 
 
 class Square:
+    """the square class begins here"""
 
     def __init__(self, size=0):
         """

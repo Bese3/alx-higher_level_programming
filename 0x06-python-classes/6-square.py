@@ -5,6 +5,7 @@
 
 class Square:
     """square class"""
+
     def __init__(self, size=0, position=(0, 0)):
         """
         The above code defines a class with methods
