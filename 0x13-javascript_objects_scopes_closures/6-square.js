@@ -8,6 +8,12 @@ module.exports = class Square extends Rectangle {
     super(size, size);
   }
 
+  /**
+   * charPrint - prints a rectangle of characters with a specified width and height, using
+   * the character `c` as the fill.
+   * @c: - The parameter `c` is a character that will be used to print a pattern. If no character
+   * is provided, the default character 'X' will be used.
+   */
   charPrint (c) {
     if (c === undefined) {
       c = 'X';
