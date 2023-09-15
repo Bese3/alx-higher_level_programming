@@ -22,7 +22,8 @@ def main():
     Session = session()
     states = Session.query(State).order_by('id').first()
     # for state in states:
-    print(f"{states.id}: {states.name}")
+    if states:
+        print(f"{states.id}: {states.name}")
     Session.close()
 
 
