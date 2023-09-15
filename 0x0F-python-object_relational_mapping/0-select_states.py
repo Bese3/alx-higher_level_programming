@@ -7,17 +7,21 @@ import MySQLdb
 from sys import argv
 
 
-def main():
-    """
-    main program starts here
-    """
-    db = MySQLdb.connect(host="localhost", port=3306,
-                        user=argv[1], passwd=argv[2], db=argv[3])
-    cursor = db.cursor()
-    cursor.execute("SELECT * FROM state ORDER BY id")
-    for i in cursor.fetchall():
-          print(i)
-   
-
 if __name__ == '__main__':
-    main()
+    db = MySQLdb.connect(user=argv[1],
+                         passwd=argv[2],
+                         db=argv[3],
+                         host='localhost',
+                         port=3306)
+
+    cursor = db.cursor()
+
+    cursor.execute("SELECT * FROM states ORDER BY id ASC")
+
+    data = cursor.fetchall()
+
+    for row in data:
+        print(row)
+
+    cursor.close()
+    db.close()
