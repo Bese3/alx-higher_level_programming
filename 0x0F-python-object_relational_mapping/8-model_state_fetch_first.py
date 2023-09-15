@@ -24,6 +24,8 @@ def main():
     # for state in states:
     if states:
         print(f"{states.id}: {states.name}")
+    else:
+        print("Nothing")
     Session.close()
 
 
