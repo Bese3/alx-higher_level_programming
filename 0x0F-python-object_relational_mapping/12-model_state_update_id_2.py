@@ -27,7 +27,7 @@ def main():
     try:
         for i in risk_chars:
             if i in argv[4]:
-                print("bad input")
+                # print("bad input")
                 return
     except IndexError:
         pass

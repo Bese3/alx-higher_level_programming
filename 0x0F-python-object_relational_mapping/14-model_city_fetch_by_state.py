@@ -6,6 +6,7 @@
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from model_state import Base, State
+from model_city import City
 from sys import argv
 
 
@@ -33,13 +34,12 @@ def main():
         pass
 
     Session = session()
-    lousiana = State(name='Louisiana')
-    Session.add(lousiana)
+    my_states = Session.query(State.name, City).filter(State.id ==
+                                                       City.state_id).all()
+    # print(states.City.name for states in my_states)
+    for i in my_states:
+        print(f"{i.name}: ({i.City.id}) {i.City.name}")
     Session.commit()
-    state_id = Session.query(State.id).filter(State.name == 'Louisiana').all()
-    for i in state_id:
-        for j in i:
-            print(j)
 
 
 if __name__ == '__main__':
