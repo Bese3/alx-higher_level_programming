@@ -26,20 +26,20 @@ def main():
                   "_", "*"]
     try:
         for i in risk_chars:
-          if i in argv[4]:
-            print("bad input")
-            return
+            if i in argv[4]:
+                print("bad input")
+                return
     except IndexError:
-       pass
-    
+        pass
+
     Session = session()
     lousiana = State(name='Louisiana')
     Session.add(lousiana)
     Session.commit()
     state_id = Session.query(State.id).filter(State.name == 'Louisiana').all()
     for i in state_id:
-       for j in i:
-          print(j)
+        for j in i:
+            print(j)
 
 
 if __name__ == '__main__':
