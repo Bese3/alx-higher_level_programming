@@ -24,19 +24,22 @@ def main():
                   "\"", "\b", "\n", "\t"
                   "\r", "Z", "\\", "%"
                   "_", "*"]
-    for i in risk_chars:
-        if i in argv[4]:
-            # print("bad input")
+    try:
+        for i in risk_chars:
+          if i in argv[4]:
+            print("bad input")
             return
+    except IndexError:
+       pass
+    
     Session = session()
-    states = Session.query(State).filter(State.name
-                                         == argv[4]).order_by('id').all()
-    if states:
-        for state in states:
-            print(f"{state.id}")
-    else:
-        print("Not found")
-    Session.close()
+    lousiana = State(name='Louisiana')
+    Session.add(lousiana)
+    Session.commit()
+    state_id = Session.query(State.id).filter(State.name == 'Louisiana').all()
+    for i in state_id:
+       for j in i:
+          print(j)
 
 
 if __name__ == '__main__':
