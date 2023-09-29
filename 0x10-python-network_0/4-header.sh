@@ -4,5 +4,5 @@
 if [ $# -lt 1 ]; then
 	exit
 fi
-curl -sH "X-School-User-Id: 98" $1
+curl -sH "X-School-User-Id: 98" "$1"
 
