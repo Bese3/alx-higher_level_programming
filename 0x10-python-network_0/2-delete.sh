@@ -4,4 +4,4 @@
 if [ $# -lt 1 ]; then
 	exit
 fi
-curl -X DELETE $1
+curl -X DELETE "$1"
