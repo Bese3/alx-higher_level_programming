@@ -4,5 +4,5 @@
 if [ $# -lt 1 ]; then
 	exit
 fi
-curl -sIX OPTIONS $1 | grep Allow | sed 's/Allow: //'
+curl -sIX OPTIONS "$1" | grep Allow | sed 's/Allow: //'
 
