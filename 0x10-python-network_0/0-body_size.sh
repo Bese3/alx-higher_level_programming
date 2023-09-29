@@ -4,5 +4,5 @@
 if [ $# -lt 1 ]; then
 	exit
 fi
-curl -sI $1 | grep Content-Length | sed 's/Content-Length: //'
+curl -sI "$1" | grep Content-Length | sed 's/Content-Length: //'
 
