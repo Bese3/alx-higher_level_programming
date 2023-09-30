@@ -2,6 +2,8 @@
 """
 Module that finds a peak in a list of integers
 """
+
+
 def find_peak(list_of_integers):
     """
     The function "find_peak" takes a list of integers as input
