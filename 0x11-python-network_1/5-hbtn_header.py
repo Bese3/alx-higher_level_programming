@@ -5,6 +5,7 @@ a script to be executed as a standalone
 program or imported as a module.
 """
 import requests
+import sys
 
 
 def main():
@@ -12,7 +13,9 @@ def main():
     Details about the http response
     are printed.
     '''
-    url = "https://alx-intranet.hbtn.io/status"
+    url = sys.argv[1] if len(sys.argv) >= 2 else ""
+    if url == "":
+        return
     r = requests.get(url)
     print(r.headers['X-Request-Id'])
 
