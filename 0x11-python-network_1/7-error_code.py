@@ -15,7 +15,7 @@ def main():
     '''
     url = sys.argv[1]
     r = requests.post(url)
-    if r.status_code != 400:
+    if r.status_code != 200:
         print(f"Error code: {r.status_code}")
         return
     body = r.text
