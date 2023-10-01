@@ -24,9 +24,8 @@ def main():
     data = parse.urlencode(values)
     data = data.encode('utf-8')
     req = request.Request(url, data)
-    print((req.get_full_url()))
     with request.urlopen(req) as response:
-        print(parse.urldecode(response.read()))
+        print(str(response.read())[2:-1])
 
 
 if __name__ == '__main__':
