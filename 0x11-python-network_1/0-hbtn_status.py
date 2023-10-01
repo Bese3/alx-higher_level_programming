@@ -10,7 +10,8 @@ if __name__ == '__main__':
     """
     requesting for alx status
     """
-    with urllib.request.urlopen("https://alx-intranet.hbtn.io/status") as response:
+    with urllib.request.urlopen("https://alx-intranet.hbtn.io/status")\
+         as response:
         print("Body response:")
         print(f"\t- type: {type(response.read())}")
         print(f"\t- content: {response.read()}")
