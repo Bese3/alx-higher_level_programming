@@ -21,13 +21,11 @@ def main():
     url = argv[1]
     try:
         with request.urlopen(url) as response:
-            read = response.read()
+            read = response.read().decode('utf-8')
             print(read)
     except error.URLError as e:
-        if hasattr(e, 'reason'):
-            print(e.reason)
-        elif hasattr(e, 'code'):
-            print(e.code)
+        if hasattr(e, 'code'):
+            print(f"Error code: {e.code}")
 
 
 if __name__ == '__main__':
