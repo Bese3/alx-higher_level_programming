@@ -14,14 +14,10 @@ def main():
     Details about the http response
     are printed.
     '''
-    url = f"https://api.github.com/repos/{sys.argv[1]}/{sys.argv[2]}/commits"
+    url = f"https://api.github.com/repos/{sys.argv[2]}/{sys.argv[1]}/commits"
     r = requests.get(url)
     json_data = r.json()
-    j = 0
-    for i in json_data:
-        j += 1
-        if j == 10:
-            break
+    for i, j in zip(json_data, range(10)):
         print(f"{i['sha']}: {i['commit']['author']['name']}")
 
 
