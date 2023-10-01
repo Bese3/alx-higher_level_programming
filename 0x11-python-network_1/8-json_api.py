@@ -14,9 +14,16 @@ def main():
     are printed.
     '''
     q = sys.argv[1] if len(sys.argv) >= 2 else ""
-    url = "http://0.0.0.0:5000/search_user" + "?" + q
-    r = requests.post(url)
-    print(r.text)
+    url = "http://0.0.0.0:5000/search_user"
+    r = requests.post(url, data={'q': q})
+    try:
+        json_data = r.json()
+        if json_data == {}:
+            print("No result")
+            return
+        print(f"[{json_data['id']}] {json_data['name']}")
+    except ValueError:
+        print("Not a valid JSON")
 
 
 if __name__ == '__main__':
