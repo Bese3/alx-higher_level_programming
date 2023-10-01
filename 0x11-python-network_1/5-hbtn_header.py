@@ -13,9 +13,7 @@ def main():
     Details about the http response
     are printed.
     '''
-    url = sys.argv[1] if len(sys.argv) >= 2 else ""
-    if url == "":
-        return
+    url = sys.argv[1]
     r = requests.get(url)
     print(r.headers['X-Request-Id'])
 
