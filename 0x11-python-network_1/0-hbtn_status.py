@@ -17,7 +17,7 @@ def main():
          as response:
         read = response.read()
         print("Body response:")
-        print("\t- type:", type(ead))
+        print("\t- type:", type(read))
         print("\t- content:", read)
         print("\t- utf8 content:", str(read)[2:-1])
 
