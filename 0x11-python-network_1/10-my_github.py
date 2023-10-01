@@ -19,7 +19,7 @@ def main():
     json_data = r.json()
     try:
         if json_data['message']:
-            print(json_data['message'])
+            print(None)
             return
     except KeyError:
         print(json_data['id'])
