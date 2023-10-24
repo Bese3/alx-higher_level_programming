@@ -17,7 +17,7 @@ request(url, (error, response, body) => {
         } else userIdCompletion[todo.userId] = 1;
       }
     });
-      
+
     console.log(userIdCompletion);
   }
 });
