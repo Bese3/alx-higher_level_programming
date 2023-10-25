@@ -11,7 +11,7 @@ request(url, (error, response, body) => {
   if (error) {
     console.log(error);
   } else {
-    fs.writeFile(filename, body, { flag: 'wx', encoding: 'utf8' }, function (err) {
+    fs.writeFile(filename, body, { encoding: 'utf8' }, function (err) {
       if (err) {
         console.log(err);
       }
